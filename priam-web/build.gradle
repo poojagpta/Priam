@@ -3,6 +3,9 @@ plugins {
 }
 
 apply plugin: 'war'
+war {
+	archiveName 'Priam.war'
+}
 
 dependencies {
     compile project(':priam')
