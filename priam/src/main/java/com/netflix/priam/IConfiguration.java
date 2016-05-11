@@ -298,7 +298,7 @@ public interface IConfiguration
     /**
      * @return In memory compaction limit
      */
-    public int getInMemoryCompactionLimit();
+    //public int getInMemoryCompactionLimit();
 
     /**
      * @return Compaction throughput
@@ -338,7 +338,7 @@ public interface IConfiguration
     /**
      * @return Get Memtable throughput settings
      */
-    public int getMemtableTotalSpaceMB();
+    //public int getMemtableTotalSpaceMB();
     
     /**
      * @return stream_throughput_outbound_megabits_per_sec in yaml
@@ -348,7 +348,7 @@ public interface IConfiguration
     /**
      * @return multithreaded_compaction in yaml
      */
-    public boolean getMultithreadedCompaction();
+   // public boolean getMultithreadedCompaction();
 
     /**
      * Get the paritioner for this cassandra cluster/node.
