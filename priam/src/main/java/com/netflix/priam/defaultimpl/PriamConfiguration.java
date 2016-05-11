@@ -64,13 +64,13 @@ public class PriamConfiguration implements IConfiguration
     private static final String CONFIG_SSL_STORAGE_LISTERN_PORT_NAME = PRIAM_PRE + ".ssl.storage.port";
     private static final String CONFIG_CL_BK_LOCATION = PRIAM_PRE + ".backup.commitlog.location";
     private static final String CONFIG_THROTTLE_UPLOAD_PER_SECOND = PRIAM_PRE + ".upload.throttle";
-    private static final String CONFIG_IN_MEMORY_COMPACTION_LIMIT = PRIAM_PRE + ".memory.compaction.limit";
+    //private static final String CONFIG_IN_MEMORY_COMPACTION_LIMIT = PRIAM_PRE + ".memory.compaction.limit";
     private static final String CONFIG_COMPACTION_THROUHPUT = PRIAM_PRE + ".compaction.throughput";
     private static final String CONFIG_MAX_HINT_WINDOW_IN_MS = PRIAM_PRE + ".hint.window";
     private static final String CONFIG_HINT_DELAY = PRIAM_PRE + ".hint.delay";
     private static final String CONFIG_BOOTCLUSTER_NAME = PRIAM_PRE + ".bootcluster";
     private static final String CONFIG_ENDPOINT_SNITCH = PRIAM_PRE + ".endpoint_snitch";
-    private static final String CONFIG_MEMTABLE_TOTAL_SPACE = PRIAM_PRE + ".memtabletotalspace";
+   // private static final String CONFIG_MEMTABLE_TOTAL_SPACE = PRIAM_PRE + ".memtabletotalspace";
     private static final String CONFIG_CASS_PROCESS_NAME = PRIAM_PRE + ".cass.process";
     private static final String CONFIG_VNODE_NUM_TOKENS = PRIAM_PRE + ".vnodes.numTokens";
     private static final String CONFIG_YAML_LOCATION = PRIAM_PRE + ".yamlLocation";
@@ -103,7 +103,7 @@ public class PriamConfiguration implements IConfiguration
     private static final String CONFIG_BACKUP_CHUNK_SIZE = PRIAM_PRE + ".backup.chunksizemb";
     private static final String CONFIG_BACKUP_RETENTION = PRIAM_PRE + ".backup.retention";
     private static final String CONFIG_BACKUP_RACS = PRIAM_PRE + ".backup.racs";
-    private static final String CONFIG_MULTITHREADED_COMPACTION = PRIAM_PRE + ".multithreaded.compaction";
+   //private static final String CONFIG_MULTITHREADED_COMPACTION = PRIAM_PRE + ".multithreaded.compaction";
     private static final String CONFIG_STREAMING_THROUGHPUT_MB = PRIAM_PRE + ".streaming.throughput.mb";
     private static final String CONFIG_PARTITIONER = PRIAM_PRE + ".partitioner";
     private static final String CONFIG_KEYCACHE_SIZE = PRIAM_PRE + ".keyCache.size";
@@ -653,12 +653,7 @@ public class PriamConfiguration implements IConfiguration
         return config.get(CONFIG_LOAD_LOCAL_PROPERTIES, false);
     }
 
-    @Override
-    public int getInMemoryCompactionLimit()
-    {
-        return config.get(CONFIG_IN_MEMORY_COMPACTION_LIMIT, 128);
-    }
-
+   
     @Override
     public int getCompactionThroughput()
     {
@@ -693,25 +688,11 @@ public class PriamConfiguration implements IConfiguration
         return config.get(CONFIG_SEED_PROVIDER_NAME, DEFAULT_SEED_PROVIDER);
     }
 
-  @Override
-    /**
-     * Defaults to 0, means dont set it in yaml
-     */
-    public int getMemtableTotalSpaceMB()
-    {
-        return config.get(CONFIG_MEMTABLE_TOTAL_SPACE, 1024);
-    }
-
+ 
     @Override
     public int getStreamingThroughputMB()
     {
         return config.get(CONFIG_STREAMING_THROUGHPUT_MB, 400);
-    }
-
-    @Override
-    public boolean getMultithreadedCompaction()
-    {
-        return config.get(CONFIG_MULTITHREADED_COMPACTION, false);
     }
 
     public String getPartitioner()
